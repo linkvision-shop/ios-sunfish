@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "verified": false,
+  "note": "Candidates read from dtbo.img (EvolutionX zip payload), overlay 6 of 8 = model 'MP1.0', chosen because getvar hw-revision is MP1.0. Not read from the live FDT; which panel is active at runtime is unconfirmed.",
+  "sources": {
+    "dtbo_img_sha256": "6187ae47fdfc3f35ac949ebb62b8c85781179b625c70e7e5947eda3183a4c6de",
+    "boot_img_sha256_from_rom_zip": "077e425bff85af3c6f5d2ef05d88872d7f8c704aa1068fb81030bc4fddea9a92",
+    "boot_img_sha256_from_phone_upload": "d77c52d00a748e0488d5d3fa58f0d025a74fb5f006c4a367f71253f1e58db6c5",
+    "note_boot": "the two boot.img files differ as files but kernel, ramdisk and dtb sections are byte-identical (same section hashes)"
+  },
+  "touch": {
+    "compatible": "st,fts",
+    "i2c_addr": "0x49",
+    "bus_label": "qupv3_se7_i2c",
+    "irq_gpio_number": 9,
+    "reset_gpio_number": 8,
+    "switch_gpio_number": 72,
+    "max_coords": [1079, 2339],
+    "gpio_controller": null,
+    "overlay_path": "/fragment@60/__overlay__/sunfish_i2ctouch@49"
+  },
+  "panel_candidate": {
+    "node": "qcom,mdss_dsi_sofef01_sdc_1080p_cmd",
+    "name": "sofef01 cmd mode dsi sdc panel",
+    "mode": "dsi_cmd_mode",
+    "width": 1080,
+    "height": 2340,
+    "fps": 60,
+    "other_1080x2340_panels_in_overlay": 0
+  },
+  "fb": {"base": null, "size": null, "width": null, "height": null, "stride": null, "format": null}
+}

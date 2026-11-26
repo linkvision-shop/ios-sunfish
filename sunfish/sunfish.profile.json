@@ -1,0 +1,170 @@
+{
+  "schema": 1,
+  "device": "sunfish",
+  "verified": false,
+  "build_identity": {
+    "live_fdt_sha256": "3e36f19f73956402dc35419fa58b7683b85e54671f97b8f1f07db14bea5864fd",
+    "boot_img_sha256": "077e425bff85af3c6f5d2ef05d88872d7f8c704aa1068fb81030bc4fddea9a92",
+    "dtbo_img_sha256": "6187ae47fdfc3f35ac949ebb62b8c85781179b625c70e7e5947eda3183a4c6de",
+    "bootloader_version": "s5-0.5-10252351",
+    "hw_revision": "MP1.0"
+  },
+  "ram": {
+    "base": "0x100000000",
+    "size": "0xfcc00000",
+    "source": "live.fdt memory nodes + iomem System RAM a5030000-1fcbfffff; same values as ios-sweet --highmem; unverified on target",
+    "alt_lowmem": {
+      "base": "0xb0000000",
+      "size": "0x4d000000"
+    }
+  },
+  "reserved": [
+    {
+      "base": "0x85700000",
+      "size": "0x600000"
+    },
+    {
+      "base": "0x85e00000",
+      "size": "0x1ff000"
+    },
+    {
+      "base": "0x85fff000",
+      "size": "0x1000"
+    },
+    {
+      "base": "0x86000000",
+      "size": "0x200000"
+    },
+    {
+      "base": "0x86200000",
+      "size": "0x2d00000"
+    },
+    {
+      "base": "0x8ab00000",
+      "size": "0x500000"
+    },
+    {
+      "base": "0x8b000000",
+      "size": "0x9800000"
+    },
+    {
+      "base": "0x94800000",
+      "size": "0x500000"
+    },
+    {
+      "base": "0x94d00000",
+      "size": "0x1e00000"
+    },
+    {
+      "base": "0x96b00000",
+      "size": "0x2200000"
+    },
+    {
+      "base": "0x98d00000",
+      "size": "0x200000"
+    },
+    {
+      "base": "0x98f00000",
+      "size": "0x80000"
+    },
+    {
+      "base": "0x98f80000",
+      "size": "0x10000"
+    },
+    {
+      "base": "0x98f90000",
+      "size": "0x5000"
+    },
+    {
+      "base": "0x98f95000",
+      "size": "0x2000"
+    },
+    {
+      "base": "0x9e400000",
+      "size": "0x1400000"
+    },
+    {
+      "base": "0x9f800000",
+      "size": "0x1e00000"
+    },
+    {
+      "base": "0x9c000000",
+      "size": "0x1700000"
+    },
+    {
+      "base": "0x9d700000",
+      "size": "0x100000"
+    },
+    {
+      "base": "0xa47df000",
+      "size": "0x40000"
+    },
+    {
+      "base": "0xa481f000",
+      "size": "0x400000"
+    },
+    {
+      "base": "0xa4c1f000",
+      "size": "0x400000"
+    },
+    {
+      "base": "0xa501f000",
+      "size": "0x1000"
+    },
+    {
+      "base": "0xa5020000",
+      "size": "0x10000"
+    }
+  ],
+  "gic": {
+    "gicd": "0x17a00000",
+    "gicd_size": "0x10000",
+    "gicr": "0x17a60000",
+    "gicr_size": "0x100000"
+  },
+  "timer": {
+    "freq_hz": 19200000,
+    "vtimer_intid": 19,
+    "source": "timer interrupts PPI index 3 -> INTID 16+3 (standard arm,armv8-timer order)"
+  },
+  "fb": {
+    "base": "0x9c000000",
+    "size": "0x1700000",
+    "width": 1080,
+    "height": 2340,
+    "stride": null,
+    "format": null,
+    "panel_mode": "dsi_cmd_mode",
+    "source": "cont_splash_region + cmdline msm_drm.dsi_display0=dsi_sofef01_sdc_1080p_cmd_display"
+  },
+  "ufs": {
+    "base": "0x1d84000",
+    "size": "0x3000"
+  },
+  "cpus": [
+    "0x0",
+    "0x100",
+    "0x200",
+    "0x300",
+    "0x400",
+    "0x500",
+    "0x600",
+    "0x700"
+  ],
+  "restart": {
+    "imem_restart_reason": null,
+    "pshold": null
+  },
+  "touch": {
+    "compatible": "st,fts",
+    "bus_base": "0xa84000",
+    "i2c_addr": "0x49",
+    "power_rail": null,
+    "irq_gpio_number": 9,
+    "reset_gpio_number": 8
+  },
+  "keys": {
+    "pon_base": null,
+    "vol_up_gpio": null
+  }
+}
